@@ -1,10 +1,10 @@
-package com.java.main;
+package com.java.Main;
 
-import com.java.controller.AnimalController;
+import com.java.Controller.AnimalController;
 
 public class Main {
     public static void main(String[] args) {
-        AnimalController controller = new AnimalController();
-        controller.go();
+        AnimalController animalController = new AnimalController();
+        animalController.Start();
     }
 }
