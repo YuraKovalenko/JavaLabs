@@ -1,79 +1,71 @@
-package com.java.methods;
+package com.java.Methods;
 
-import com.java.model.Animal;
-import com.java.initialisation.Initialisation;
+import com.java.Model.Animal;
+import com.java.Initialisation.Initialisation;
 import com.java.View.AnimalView;
 
 public class Methods {
-    Initialisation init = new Initialisation();
-    AnimalView animalView = new AnimalView();
     Animal[] animal = new Animal[10];
-    private int morThanAge;
-    private String fam;
-    private String sp,col;
-    public int getMorThanAge(){
-        return morThanAge;
-    }
-    public void setMorThanAge(int morThanAge){
-        this.morThanAge=morThanAge;
-    }
-    public String getFam(){
-        return fam;
-    }
-    public void setFam(String fam){
-        this.fam=fam;
-    }
-    public String getSp(){
-        return sp;
-    }
-    public void setSp(String sp){
-        this.sp=sp;
-    }
-    public String getCol(){
-        return col;
-    }
-    public void setCol(String col){
-        this.col=col;
-    }
+    AnimalView animalView = new AnimalView();
 
     public void create(){
-        init.initialization(animal);
+        Initialisation.initialization(animal);
     }
-    public void task(){
-        for (int i = 0; i<animal.length; i++){
+
+    public void printAllAnimals(){
+        for(int i = 0; i < animal.length; i++){
             System.out.println(animal[i]);
         }
     }
-    public void task1(){
-        for (int i = 0; i<animal.length; i++){
-            if(animal[i].getAge()>getMorThanAge()){
-                System.out.println(animal[i]);
+
+    public void funcMorThanAge(int age){
+        if(age>20){
+            animalView.messageForFuncMorThanAge();
+        }
+        else {
+            for(int i = 0; i < animal.length; i++){
+                if(animal[i].getAge() > age){
+                    System.out.println(animal[i]);
+                }
             }
         }
     }
-    public void task2(){
-        for (int i = 0; i < 10; i++) {
-            if (animal[i].getFamily().equals(fam)) {
-                System.out.println(animal[i]);
+
+    public void equalFamily(String fam){
+        if("cat".equals(fam) || "dog".equals(fam) || "cow".equals(fam)){
+            for(int i = 0; i < animal.length; i++){
+                if (animal[i].getFamily().equals(fam)){
+                    System.out.println(animal[i]);
+                }
             }
         }
+        else {
+            animalView.messageForFuncEqualsFamily();
+        }
     }
-    public void task3(){
+
+    public void equalSpeciesAndColor(String species, String color){
         String[]str = new String[10];
         int count = 0;
-        for (int i = 0; i < 10; i++) {
-            if (animal[i].getSpecies().equals(sp) && animal[i].getColor().equals(col)) {
-                str[i]=animal[i].getSpecies();
-                System.out.println(animal[i]);
+        if ("sp1".equals(species) || "sp2".equals(species) || "sp3".equals(species) &&
+        "blue".equals(color) || "red".equals(color) || "green".equals(color) || "yellow".equals(color)){
+            for(int i = 0; i < animal.length; i++){
+                if(animal[i].getSpecies().equals(species) && animal[i].getColor().equals(color)){
+                    str[i]=animal[i].getSpecies();
+                    System.out.println(animal[i]);
+                }
+            }
+            for (int i = 0;i<10;i++){
+                if (str[i]!=null){
+                    count++;
+                }
+            }
+            if (count==0){
+                animalView.messageForFuncEqualSpeciesAndColor();
             }
         }
-        for (int i = 0;i<10;i++){
-            if (str[i]!=null){
-                count++;
-            }
-        }
-        if (count==0){
-            animalView.emptyMessage();
+        else {
+            animalView.messageForFuncEqualSpeciesAndColor();
         }
     }
 }
