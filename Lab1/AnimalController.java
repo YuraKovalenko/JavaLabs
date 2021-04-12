@@ -1,55 +1,45 @@
 package com.java.Controller;
 
-import com.java.Methods.Methods;
-import com.java.View.AnimalView;
-
-import java.util.Scanner;
+import com.java.View.*;
+import com.java.Model.Methods;
 
 public class AnimalController {
+    private AnimalView animalView = new AnimalView();
+    private Methods methods = new Methods();
 
-    public void Start(){
-        AnimalView animalView = new AnimalView();
-        Scanner scanner = new Scanner(System.in);
-        Methods methods = new Methods();
-        int inputNumber;
+    public void start() {
+
         animalView.printMenu();
-        inputNumber = scanner.nextInt();
-        while (inputNumber!=5){
-            if(inputNumber<1 || inputNumber>5){
-                animalView.errorMessage();
-                animalView.message();
-            }
-            methods.create();
-            switch (inputNumber){
-                case 1:{
-                    methods.printAllAnimals();
+        while (true) {
+            switch (InputUtility.numberForMenu(animalView)) {
+                case 1: {
+                    animalView.printArray(methods.getAnimal());
                     break;
                 }
-                case 2:{
-                    animalView.messageForCase2();
-                    int morThanAge = scanner.nextInt();
-                    methods.funcMorThanAge(morThanAge);
+                case 2: {
+                    animalView.printMessage(AnimalView.ENTER_AGE);
+                    int morThanAge = InputUtility.numberForMorThanAge();
+                    animalView.printArray(methods.funcMorThanAge(morThanAge));
                     break;
                 }
-                case 3:{
-                    animalView.messageForCase3();
-                    String fam;
-                    fam = scanner.next();
-                    methods.equalFamily(fam);
+                case 3: {
+                    animalView.printMessage(AnimalView.ENTER_FAM);
+                    String fam = InputUtility.familyForFunc();
+                    animalView.printArray(methods.funcForEqualFamily(fam));
                     break;
                 }
-                case 4:{
-                    animalView.messageForCase4();
-                    String sp,col;
-                    sp = scanner.next();
-                    col = scanner.next();
-                    methods.equalSpeciesAndColor(sp,col);
+                case 4: {
+                    animalView.printMessage(AnimalView.ENTER_SP_AND_COL);
+                    String[] str;
+                    str = InputUtility.speciesAndColorForFunc();
+                    animalView.printArray(methods.funcForEqualSpeciesAndColor(str[0], str[1]));
                     break;
+                }
+                case 5: {
+                    System.exit(0);
                 }
             }
             animalView.printMenu();
-            inputNumber = scanner.nextInt();
         }
     }
 }
-
