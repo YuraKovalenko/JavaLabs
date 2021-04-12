@@ -14,6 +14,7 @@ public class Animal {
     public String getType() {
         return type;
     }
+
     public void setType(String type) {
         this.type = type;
     }
@@ -21,6 +22,7 @@ public class Animal {
     public String getKid() {
         return kid;
     }
+
     public void setKid(String kid) {
         this.kid = kid;
     }
@@ -28,6 +30,7 @@ public class Animal {
     public String getFamily() {
         return family;
     }
+
     public void setFamily(String family) {
         this.family = family;
     }
@@ -35,6 +38,7 @@ public class Animal {
     public String getGenus() {
         return genus;
     }
+
     public void setGenus(String genus) {
         this.genus = genus;
     }
@@ -42,6 +46,7 @@ public class Animal {
     public String getSpecies() {
         return species;
     }
+
     public void setSpecies(String species) {
         this.species = species;
     }
@@ -49,6 +54,7 @@ public class Animal {
     public String getSubspecies() {
         return subspecies;
     }
+
     public void setSubspecies(String subspecies) {
         this.subspecies = subspecies;
     }
@@ -56,6 +62,7 @@ public class Animal {
     public int getAge() {
         return age;
     }
+
     public void setAge(int age) {
         this.age = age;
     }
@@ -63,6 +70,7 @@ public class Animal {
     public String getColor() {
         return color;
     }
+
     public void setColor(String color) {
         this.color = color;
     }
@@ -79,8 +87,9 @@ public class Animal {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "Тип = " + type + " клас = " + kid + " сімейство = " + family + " рід = " + genus + " вид = " +
-                species + " підвид = " + subspecies + " вік = " + age + " окрас = " +color;
+                species + " підвид = " + subspecies + " вік = " + age + " окрас = " + color;
     }
 }
+
