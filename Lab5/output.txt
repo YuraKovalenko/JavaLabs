@@ -1,0 +1,5 @@
+2021-06-03 10:52:42 [main] INFO  Controller.AnimalController - App started
+2021-06-03 10:52:44 [main] INFO  Controller.AnimalController - case 1 finished
+2021-06-03 10:52:49 [main] INFO  Controller.AnimalController - case 2 finished
+2021-06-03 10:52:51 [main] ERROR Controller.AnimalController - Потрібно вводити тільки числа 
+2021-06-03 10:52:52 [main] INFO  Controller.AnimalController - App finished

@@ -1,0 +1,10 @@
+q0 w cat r aaa y 10 red
+q1 w dog r bbb y 10 red
+q2 w cat r ccc y 17 blue
+q3 w cow r ccc y 12 green
+q4 w cat r bbb y 20 red
+q5 w cow r aaa y 18 green
+q6 w cat r aaa y 10 red
+q7 w dog r ccc y 15 green
+q8 w cow r aaa y 15 yellow
+q9 w dog r bbb y 17 blue
